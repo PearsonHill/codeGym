@@ -15,22 +15,23 @@ function countdown(num, total = 0){
 
 function go( arr ){
 
-    if(arr.length <= 0){return }
+    if(arr.length <= 0){return arr }
     console.log(arr)
     const [ head, ...rest ] = arr
     return go(rest)
 }
 
-// go(['a','b', 1, 2, {pearson: 'dominates'}])
+console.log(go(['a','b', 1, 2, {foo: 'bar'}]) )
 
 
 function handshakes(arr, result){
-    console.log({arr, result})
+   
     if(arr.length <= 1){ 
 
         console.log('line 31', result)
         
-        return [...result] }
+        return [...result] 
+    }
 
     const [ head, ...rest ] = arr;
 
@@ -41,7 +42,7 @@ function handshakes(arr, result){
     })
 
 
-    handshakes(rest, result)
+    return handshakes(rest, result)
     
 
 
